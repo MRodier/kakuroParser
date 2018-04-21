@@ -1,7 +1,23 @@
 #ifndef PARSER_H
 #define PARSER_H
 
+typedef struct variable variable;
+typedef struct contrainte contrainte;
 
+struct variable{
+  int val;
+  int * domaine;
+  contrainte *contraintes;
+};
+
+struct contrainte{
+  variable *variables;
+  int somme;				//-1 si contrainte de différence
+};
+
+
+variable * variables;
+contrainte * contraintes;
 
 void parse (char * nom_fichier);
 
